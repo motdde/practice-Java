@@ -18,14 +18,14 @@ public class Main {
             for (double result : results)
                 System.out.println(result);
         } else if (args.length == 1 && args[0].equals("interactive"))
-            executenteractively();
+            executeInteractively();
         else if (args.length == 3)
             handleCommandLine(args);
         else
             System.out.println("Please provide an operation code and 2 numeric values");
     }
 
-    static void executenteractively() {
+    static void executeInteractively() {
         System.out.println("Enter an operation and two numbers:");
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
