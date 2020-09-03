@@ -43,13 +43,9 @@ public class Main {
     }
 
     private static void displayResult(char opCode, double leftVal, double rightVal, double result) {
-        StringBuilder output = new StringBuilder();
-        output.append(leftVal);
-        output.append(" ");
-        output.append(symbolFromOpcode(opCode));
-        output.append(" ");
-        output.append(rightVal + " = " + result);
-        System.out.println(output.toString());
+        char symbol = symbolFromOpcode(opCode);
+        String output = String.format("%.3f %c %.3f = %.3f", leftVal, symbol, rightVal, result);
+        System.out.println(output);
     }
 
     private static char symbolFromOpcode(char opCode) {
@@ -87,7 +83,7 @@ public class Main {
                 result = leftVal * rightVal;
                 break;
             case 'd':
-                result = rightVal != 0 ? rightVal / rightVal : 0.0d;
+                result = rightVal != 0 ? leftVal / rightVal : 0.0d;
                 break;
             default:
                 System.out.println("Invaid opCode: " + opCode);
