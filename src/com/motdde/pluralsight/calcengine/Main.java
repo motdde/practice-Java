@@ -113,13 +113,15 @@ public class Main {
 
     static double valueFromWord(String word) {
         String[] numberWords = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-        double value = 0d;
+        double value = -1d;
         for (int index = 0; index < numberWords.length; index++) {
             if (word.equals(numberWords[index])) {
                 value = index;
                 break;
             }
         }
+        if (value == -1d)
+            value =  Double.parseDouble(word);
         return value;
     }
 
