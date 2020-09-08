@@ -34,3 +34,52 @@ Postfix -> Prefix -> multiplicative -> additive
 
 Type conversion and Casting
 Narrowing and widening
+
+###### String Formating
+
+%[argument index][flags][width][precision] conversion
+Conversion types
+d - Decimal
+xX - Hex
+f - Decimal
+eE - Scientific Notation
+s String
+
+Flags
+\# - radix
+0 Zero padding
+\- - left justified
+, - include grouping seperators
+space - Leading space with positive number
+\+ - Always show sign
+
+Argument Index
+index\$ - index of arguments to use (1 based not like the array)
+< - corresponds to the same arguments as the previous specifier
+
+###### Time
+
+- Time Stamping Events
+- Local date, time amd sate time
+- Global - ZonedDateTime
+
+DateTimeFormatter
+
+##### Access Modifiers
+
+Encapsulations and access modifiers
+| Modifiers | Visibility | usable on class | usable on members |
+| :--------------: | :-------------------: | :-------------: | :---------------: |
+| None | only withiin its own package (aka package private) | Y | Y |
+| public | Everywhere | Y | Y |
+| Private| only withn the declaring class | N* | Y|
+
+Field Encapsulation using accessor(getter) and mutator(setters) patterns
+
+Establishing Initial state
+- Fleid initializers: Give field a value
+- Initialization Blocks
+- Constructors
+The above also follows initialization and construction order.
+
+Constructors, constructors chaining, constructor visibility and initialization block.
