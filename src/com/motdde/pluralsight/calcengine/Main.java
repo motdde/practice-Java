@@ -3,6 +3,8 @@ package com.motdde.pluralsight.calcengine;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+import static com.motdde.pluralsight.calcengine.MathEquation.getAverageResult;
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
@@ -20,8 +22,7 @@ public class Main {
                 equation.execute();
                 System.out.println("result = " + equation.getResult());
             }
-
-            System.out.println("Average result = " + MathEquation.getAverageResult());
+            System.out.println("Average result = " + getAverageResult());
         } else if (args.length == 1 && args[0].equals("interactive")) {
             executeInteractively();
         } else if (args.length == 3) {
