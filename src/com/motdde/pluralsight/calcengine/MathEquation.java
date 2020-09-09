@@ -1,7 +1,5 @@
 package com.motdde.pluralsight.calcengine;
 
-
-
 public class MathEquation {
 
     private double leftVal;
@@ -46,6 +44,19 @@ public class MathEquation {
         }
         numberOfCalculations++;
         sumOfResults += result;
+    }
+
+    public void execute(double leftVal, double rightVal) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+        execute();
+    }
+
+    public void execute(int leftVal, int rightVal) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+        execute();
+        result = (int) result;
     }
 
     public static double getAverageResult() {

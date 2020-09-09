@@ -83,3 +83,19 @@ Establishing Initial state
 The above also follows initialization and construction order.
 
 Constructors, constructors chaining, constructor visibility and initialization block.
+
+Static members
+- Including keyword static
+- Static fields and importing static methods ( Actions tied to the class itself ) without having to qualify by the class name
+- Static initialization block
+```
+private static int <VariableName>;
+Static {
+ // Add your static mentods here
+}
+```
+
+Making changes to object (in this case an instace of a class) passed to methods requires using the getter and setter methods
+
+Method Overloading
+- Multiple number of parameters can be passed in by uinf the ... which is similar to the spread operator in JS. methodName(dataType... variableName) varialbleName is passed in as an array
