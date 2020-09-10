@@ -11,6 +11,21 @@ public class Main {
         // performCalculations(args);
         Divider divider = new Divider();
         doCalculation(divider, 100.0d, 50.0d);
+
+        performMoreCalculations();
+    }
+
+    private static void performMoreCalculations() {
+        CalculateBase[] calculations = { new Divider(100.0d, 50.0d), new Adder(25.0d, 92.0d),
+                new Subtracter(225.0d, 17.0d), new Multiplier(11.0d, 3.0d) };
+
+        System.out.println();
+        System.out.println("Array Calculations");
+
+        for (CalculateBase calculation : calculations) {
+            calculation.calculate();
+            System.out.println(" result = " + calculation.getResult());
+        }
     }
 
     static void doCalculation(CalculateBase calculation, double leftVal, double rightVal) {

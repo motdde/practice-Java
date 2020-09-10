@@ -91,7 +91,7 @@ Static members
 ```
 private static int <VariableName>;
 Static {
- // Add your static mentods here
+ // Add your static methods here
 }
 ```
 
@@ -99,3 +99,8 @@ Making changes to object (in this case an instace of a class) passed to methods 
 
 Method Overloading
 - Multiple number of parameters can be passed in by uinf the ... which is similar to the spread operator in JS. methodName(dataType... variableName) varialbleName is passed in as an array
+
+There is a difference between refrence types and instance type.
+```instanceOf``` operator to check that if its an instance of the object in question.
+
+super refrence allows us call the base class.
