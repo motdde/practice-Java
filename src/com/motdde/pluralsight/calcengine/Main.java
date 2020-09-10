@@ -8,11 +8,28 @@ import static com.motdde.pluralsight.calcengine.MathEquation.getAverageResult;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        // performCalculations(args);
-        Divider divider = new Divider();
-        doCalculation(divider, 100.0d, 50.0d);
+        performCalculations(args);
 
-        performMoreCalculations();
+        // performMoreCalculations();
+    }
+
+    private static CalculateBase createCalculation(MathOperation operation, double leftVal, double rightVal) {
+        CalculateBase calculation = null;
+        switch (operation) {
+            case ADD:
+                calculation = new Adder(leftVal, rightVal);
+                break;
+            case SUBTRACT:
+                calculation = new Subtracter(leftVal, rightVal);
+                break;
+            case DIVIDE:
+                calculation = new Divider(leftVal, rightVal);
+                break;
+            case MULTIPY:
+                calculation = new Multiplier(leftVal, rightVal);
+                break;
+        }
+        return calculation;
     }
 
     private static void performMoreCalculations() {
@@ -66,18 +83,28 @@ public class Main {
     }
 
     private static void performOperation(String[] parts) {
-        char opCode = opCodeFromString(parts[0]);
-        if (opCode == 'w')
-            handleWhen(parts);
-        else {
-            double leftVal = valueFromWord(parts[1]);
-            double rightVal = valueFromWord(parts[2]);
-            MathEquation equation = new MathEquation(opCode, leftVal, rightVal);
-            equation.execute();
-            double result = equation.getResult();
-            displayResult(opCode, leftVal, rightVal, result);
-        }
+        MathOperation operation = MathOperation.valueOf(parts[0].toUpperCase());
+        double leftVal = valueFromWord(parts[1]);
+        double rightVal = valueFromWord(parts[2]);
+        CalculateBase calculation = createCalculation(operation, leftVal, rightVal);
+        calculation.calculate();
+        System.out.println("Operation performed: " + operation);
+        System.out.println(calculation.getResult());
     }
+
+    // private static void performOperation(String[] parts) {
+    // char opCode = opCodeFromString(parts[0]);
+    // if (opCode == 'w')
+    // handleWhen(parts);
+    // else {
+    // double leftVal = valueFromWord(parts[1]);
+    // double rightVal = valueFromWord(parts[2]);
+    // MathEquation equation = new MathEquation(opCode, leftVal, rightVal);
+    // equation.execute();
+    // double result = equation.getResult();
+    // displayResult(opCode, leftVal, rightVal, result);
+    // }
+    // }
 
     private static void handleWhen(String[] parts) {
         LocalDate startDate = LocalDate.parse(parts[1]);
