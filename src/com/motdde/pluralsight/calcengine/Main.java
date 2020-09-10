@@ -8,7 +8,16 @@ import static com.motdde.pluralsight.calcengine.MathEquation.getAverageResult;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        performCalculations(args);
+        // performCalculations(args);
+        Divider divider = new Divider();
+        doCalculation(divider, 100.0d, 50.0d);
+    }
+
+    static void doCalculation(CalculateBase calculation, double leftVal, double rightVal) {
+        calculation.setLeftVal(leftVal);
+        calculation.setRigtVal(rightVal);
+        calculation.calculate();
+        System.out.println("Calculation result = " + calculation.getResult());
     }
 
     static void performCalculations(String[] args) {
