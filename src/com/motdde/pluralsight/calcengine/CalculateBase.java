@@ -5,7 +5,8 @@ public abstract class CalculateBase {
     private double rightVal;
     private double result;
 
-    public CalculateBase(){}
+    public CalculateBase() {
+    }
 
     public CalculateBase(double leftVal, double rightVal) {
         this.leftVal = leftVal;
@@ -28,8 +29,8 @@ public abstract class CalculateBase {
         return rightVal;
     }
 
-    public void setRigtVal(double rigtVal) {
-        this.rightVal = rigtVal;
+    public void setRigtVal(double rightVal) {
+        this.rightVal = rightVal;
     }
 
     public void setLeftVal(double leftVal) {
