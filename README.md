@@ -39,7 +39,7 @@ Narrowing and widening
 
 %[argument index][flags][width][precision] conversion
 Conversion types
-d - Decimal
+d - integer
 xX - Hex
 f - Decimal
 eE - Scientific Notation
@@ -72,22 +72,25 @@ Encapsulations and access modifiers
 | :--------------: | :-------------------: | :-------------: | :---------------: |
 | None | only withiin its own package (aka package private) | Y | Y |
 | public | Everywhere | Y | Y |
-| Private| only withn the declaring class | N* | Y|
+| Private| only withn the declaring class | N\* | Y|
 
 Field Encapsulation using accessor(getter) and mutator(setters) patterns
 
 Establishing Initial state
+
 - Fleid initializers: Give field a value
 - Initialization Blocks
 - Constructors
-The above also follows initialization and construction order.
+  The above also follows initialization and construction order.
 
 Constructors, constructors chaining, constructor visibility and initialization block.
 
 Static members
+
 - Including keyword static
 - Static fields and importing static methods ( Actions tied to the class itself ) without having to qualify by the class name
 - Static initialization block
+
 ```
 private static int <VariableName>;
 Static {
@@ -98,9 +101,40 @@ Static {
 Making changes to object (in this case an instace of a class) passed to methods requires using the getter and setter methods
 
 Method Overloading
+
 - Multiple number of parameters can be passed in by uinf the ... which is similar to the spread operator in JS. methodName(dataType... variableName) varialbleName is passed in as an array
 
 There is a difference between refrence types and instance type.
-```instanceOf``` operator to check that if its an instance of the object in question.
+`instanceOf` operator to check that if its an instance of the object in question.
 
 super refrence allows us call the base class.
+
+Enums
+
+```
+public enum FlightCrewJOB(){
+    FLIGHT_ATTENDANT("Flight Attendant),
+    COPILOT("First Officer"),
+    PILOT("Captain);
+
+    private String title;
+    private String getTitle(){return title;}
+    private FlightCrewJob(String title) {
+        this.title = title;
+    }
+}
+```
+
+Interfaces: It allows is to define a contract for behavoir
+
+
+//TODO Review inner class
+
+
+Data Strtuctures are diverse
+- Ordering
+- Pairs
+- Uniqueness
+
+String::compareTo - Method refrence syntax
+item -> System.out.println(item * item) - lambda expressions
