@@ -1,23 +1,51 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-
-        {
-            "type": "java",
-            "name": "Run",
-            "request": "launch",
-            "mainClass": "com.motdde.pluralsight.calcengine.Main",
-            "projectName": "Java-Practice_6bf15548",
-        }, {
-            "type": "java",
-            "name": "Run Interactively",
-            "request": "launch",
-            "mainClass": "com.motdde.pluralsight.calcengine.Main",
-            "projectName": "Java-Practice_6bf15548",
-            "args": "interactive"
-        },
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch CoinTossGame",
+      "request": "launch",
+      "mainClass": "tau.project.CoinTossGame",
+      "projectName": "Java-Practice_6bf15548"
+    },
+    {
+      "type": "java",
+      "name": "Launch ExceptionHandling",
+      "request": "launch",
+      "mainClass": "tau.chapter13.ExceptionHandling",
+      "projectName": "Java-Practice_6bf15548"
+    },
+    {
+      "type": "java",
+      "name": "Launch ExceptionExercise",
+      "request": "launch",
+      "mainClass": "tau.chapter13.ExceptionExercise",
+      "projectName": "Java-Practice_6bf15548"
+    },
+    {
+      "type": "java",
+      "name": "Launch TestResults",
+      "request": "launch",
+      "mainClass": "tau.chapter12.TestResults",
+      "projectName": "Java-Practice_6bf15548"
+    },
+    {
+      "type": "java",
+      "name": "Run",
+      "request": "launch",
+      "mainClass": "com.motdde.pluralsight.calcengine.Main",
+      "projectName": "Java-Practice_6bf15548"
+    },
+    {
+      "type": "java",
+      "name": "Run Interactively",
+      "request": "launch",
+      "mainClass": "com.motdde.pluralsight.calcengine.Main",
+      "projectName": "Java-Practice_6bf15548",
+      "args": "interactive"
+    }
+  ]
 }
