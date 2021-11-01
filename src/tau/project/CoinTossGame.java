@@ -17,16 +17,19 @@ public class CoinTossGame {
             guess = input.nextLine();
             if (guess.equalsIgnoreCase(Coin.HEADS) || guess.equalsIgnoreCase(Coin.TAILS)) {
                 validInput = false;
+                // break;
             } else {
                 System.out.println("Wrong input try again");
             }
         } while (validInput);
 
-        guess = guess.equalsIgnoreCase("h") ? Coin.HEADS : Coin.TAILS;
-        String guessOpposite = guess.equalsIgnoreCase(Coin.HEADS) ? Coin.TAILS : Coin.HEADS;
-
         player1.setGuess(guess);
-        player2.setGuess(guessOpposite);
+
+        if (player1.getGuess().equalsIgnoreCase(Coin.HEADS)) {
+            player2.setGuess(Coin.TAILS);
+        } else {
+            player2.setGuess(Coin.HEADS);
+        }
 
         Coin coin = new Coin();
         coin.flip();
